@@ -1,0 +1,16 @@
+*.pyc
+
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info/
+
+/build/
+/bin/
+/test*/
+/project*/
+
+*.key
+
+.DS_Store
