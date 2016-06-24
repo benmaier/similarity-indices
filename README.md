@@ -24,6 +24,11 @@ similarities = simind.incidence_based_similarity(a,b,assume_unique=True)
 
 print(similarities.jaccard())
 print(similarities.sorensen())
+print(similarities.ochiai())
+print(similarities.lennon())
+print(similarities.kulczynski_cody())
+print(similarities.kulczynski())
+print(similarities.anderberg())
 
 # for the abundance based similarities, one needs dictionaries with weights
 # (traditionally, the weight would be the number of times, species "key" was
@@ -36,4 +41,9 @@ similarities = simind.abundance_based_similarity(a,b,wa,wb,assume_unique=True)
 
 print(similarities.jaccard())
 print(similarities.sorensen())
+print(similarities.ochiai())
+print(similarities.lennon())
+print(similarities.kulczynski_cody())
+print(similarities.kulczynski())
+print(similarities.anderberg())
 ```
