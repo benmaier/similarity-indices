@@ -8,7 +8,6 @@ setup(name='simind',
       author_email='benjaminfrankmaier@gmail.com',
       license='MIT',
       packages=['simind'],
-      include_package_data = True,
       install_requires=[
           'numpy',
       ],
