@@ -1,14 +1,11 @@
 import numpy as np
 
-class incidence_based_similarity():
+class similarity():
 
-    def __init__(self,a,b,ab=None,assume_unique=True):
-        self.S_A = len(a)
-        self.S_B = len(b)
-        if ab is None:
-            self.S_AB = float(len(np.intersect1d(a,b,assume_unique=assume_unique)))
-        else:
-            self.S_AB = float(len(ab))
+    def __init__(self,S_A,S_B,S_AB):
+        self.S_A = float(S_A)
+        self.S_B = float(S_B)
+        self.S_AB = float(S_AB)
 
     def jaccard(self):
         return self.S_AB / (self.S_A + self.S_B - self.S_AB)
@@ -30,6 +27,18 @@ class incidence_based_similarity():
 
     def anderberg(self):
         return self.S_AB / (2*self.S_A + 2*self.S_B - 3*self.S_AB)
+
+class incidence_based_similarity(similarity):
+
+    def __init__(self,a,b,ab=None,assume_unique=True):
+        self.S_A = len(a)
+        self.S_B = len(b)
+        if ab is None:
+            self.S_AB = float(len(np.intersect1d(a,b,assume_unique=assume_unique)))
+        else:
+            self.S_AB = float(len(ab))
+
+        similarity.__init__(self,self.S_A,self.S_B,self.S_AB)
 
 class abundance_based_similarity(incidence_based_similarity):
 
