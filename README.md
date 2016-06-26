@@ -39,6 +39,21 @@ wb = { 3: 2, 4: 1, 5: 2 }
 # initialize
 similarities = simind.abundance_based_similarity(a,b,wa,wb,assume_unique=True)
 
+print("===========")
+print(similarities.jaccard())
+print(similarities.sorensen())
+print(similarities.ochiai())
+print(similarities.lennon())
+print(similarities.kulczynski_cody())
+print(similarities.kulczynski())
+print(similarities.anderberg())
+
+number_of_species_A = 50
+number_of_species_B = 100
+overlap_AB = 20
+similarities = simind.similarity(number_of_species_A,number_of_species_B,overlap_AB)
+
+print("===========")
 print(similarities.jaccard())
 print(similarities.sorensen())
 print(similarities.ochiai())
